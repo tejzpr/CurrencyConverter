@@ -28,4 +28,4 @@
 ###Run
 
 * npm start
-* Open http://localhost:3000/paypal/activity in web browser
+* Open [http://localhost:3000/paypal/activity](http://localhost:3000/paypal/activity) in web browser
