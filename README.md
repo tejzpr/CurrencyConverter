@@ -7,17 +7,17 @@
 
 ###API:
 
-* */paypal/getSupportedCurrencies* Get a list of supported currencies
-* */paypal/getRates* Gets the latest rates from remote API provider
-* */paypal/getOfflineRates*  Gets the stored rates from file system
-* */paypal/currencyConversion/:amount/:scode/:dcode* Gets the converted amount and accepts the following parameters
+* **/paypal/getSupportedCurrencies** Get a list of supported currencies
+* **/paypal/getRates** Gets the latest rates from remote API provider
+* **/paypal/getOfflineRates**  Gets the stored rates from file system
+* **/paypal/currencyConversion/:amount/:scode/:dcode** Gets the converted amount and accepts the following parameters
 	- Amount
 	- Source Currency Code
 	- Converted Currency Code
-* */paypal/conversionRate/:scode/:dcode* Get the conversion rate and accepts the following parameters
+* **/paypal/conversionRate/:scode/:dcode** Get the conversion rate and accepts the following parameters
 	- Source Currency Code
 	- Converted Currency Code
-* */paypal/getActivity* Gets a list of activities from the file system.
+* **/paypal/getActivity** Gets a list of activities from the file system.
 
 
 ###Installation
