@@ -1,0 +1,40 @@
+#!/usr/bin/env node
+
+/**
+ * Module dependencies.
+ */
+var sys = require("sys"),
+    UrlPattern = require('url-pattern'),
+    http = require("http");
+
+
+var rates = require('../scripts/currency.js');
+var transaction = require('../scripts/transaction.js');
+http.createServer(function(request,response){
+    var url = request.url;
+    switch(true){
+        case (new UrlPattern('/paypal/getSupportedCurrencies').match(url) == null?false:true):
+            rates.getSupportedCurrencies(request,response);
+            break;
+        case (new UrlPattern('/paypal/getRates').match(url) == null?false:true):
+            rates.getRates(request,response);
+            break;
+        case (new UrlPattern('/paypal/getOfflineRates').match(url) == null?false:true):
+            rates.getOfflineRates(request,response);
+            break;
+        case (new UrlPattern('/paypal/currencyConversion/:amount(.:change)/:scode/:dcode').match(url) == null?false:true):
+            rates.currencyConversion(request,response,new UrlPattern('/paypal/currencyConversion/:amount(.:change)/:scode/:dcode').match(url));
+            break;
+        case (new UrlPattern('/paypal/conversionRate/:scode/:dcode').match(url) == null?false:true):
+            rates.conversionRate(request,response,new UrlPattern('/paypal/conversionRate/:scode/:dcode').match(url));
+            break;
+        case (new UrlPattern('/paypal/getActivity').match(url) == null?false:true):
+            transaction.getActivity(request,response);
+            break;
+        case (new UrlPattern('/paypal/activity').match(url) == null?false:true):
+            transaction.getIndex(request,response);
+            break;
+        default:
+            response.end();
+    }
+}).listen(3000);

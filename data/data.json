@@ -1,0 +1,6 @@
+[
+  {"Date": "01/01/2015","Transaction": "Purchase Home Depot","rate":"45.69","code":"USD","symbol":"$"},
+  {"Date": "03/12/2015","Transaction": "Purchase Jamba Juice","rate":"85.49","code":"USD","symbol":"$"},
+  {"Date": "03/11/2015","Transaction": "Purchase DSW Depot","rate":"55.99","code":"USD","symbol":"$"},
+  {"Date": "04/07/2015","Transaction": "Purchase Macys","rate":"49.00","code":"USD","symbol":"$"}
+]
